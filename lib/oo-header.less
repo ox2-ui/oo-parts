@@ -1,0 +1,103 @@
+@import "oo-color-variables.import.less";
+@import "oo-font-variables.import.less";
+
+//
+//      Header
+//
+
+
+[header] {
+  height: 4.4rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  user-select: none;
+
+  [btn] {
+    z-index: 10;
+  }
+
+  [btn~="transparent"], [btn~="block-v"] {
+    height: 100%;
+    border-radius: 0;
+    line-height: 1;
+  }
+
+  [btn~="icon-left"] {
+    padding-left: .8rem;
+    // padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: auto;
+
+    // "jumbo-icon" added to minimize params
+    & i, & span {
+      font-size: 130%;
+      vertical-align: middle;
+    }
+  }
+
+  [btn~="icon-right"] {
+    padding-left: 1rem;
+    // padding-right: 1rem;
+    padding-right: .8rem;
+    margin-left: auto;
+
+    // "jumbo-icon" added to minimize params
+    & i, & span {
+      font-size: 130%;
+      vertical-align: middle;
+    }
+  }
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    text-transform: uppercase;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    padding: 0 8rem;
+    min-width: 3rem;
+    height: 4.4rem;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 4.4rem;
+    cursor: default;
+
+    font-family: @condensed;
+  }
+
+  .title.no-text-transform {
+    text-transform: none;
+  }
+
+  .title.no-edge-left {
+    padding-left: 1rem;
+  }
+}
+
+[header~="absolute"] {
+  // position: absolute; removed for famous compatibility
+}
+
+
+[header~="in-webview-ios"] {
+  box-sizing: content-box;
+  padding-top: 20px;
+}
+
+// XXX deprecate for per button push setting
+[header~="has-left-button"] {
+  padding-left: .7rem;
+}
+
+[header~="has-right-button"] {
+  padding-right: .7rem;
+}

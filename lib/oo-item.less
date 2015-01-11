@@ -1,0 +1,454 @@
+@import "oo-color-variables.import.less";
+@import "oo-font-variables.import.less";
+
+[item] {
+  user-select: none;
+  cursor: default;
+  font-size: 1rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: .1rem;
+  padding: 0 1rem;
+}
+
+[item~="jumbo"] {
+  height: 6.1rem;
+}
+
+[item~="small"] {
+  height: 3.4rem;
+}
+
+[item~="push-bottom"] {
+  margin-bottom: .5rem;
+}
+
+[item~="rounded"] {
+  border-radius: 5px;
+}
+
+[item~="border-b"] {
+  border-bottom: 1px solid @backdrop;
+}
+
+[item~="border:b"] {
+  border-bottom: 1px solid @backdrop;
+}
+
+[item~="auto"] {
+  height: auto;
+}
+
+[item~="inside-form"] {
+  // no-edge
+  padding: 0;
+  // XXX think how to merge with [oo-Form-Item]
+  flex-grow: 1;
+  margin: .5rem 0;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px dotted #DFE4E7;
+
+  [item-title] {
+    font-family: @roboto;
+    color: @neutral;
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+
+}
+
+[item~="push:bottom"] {
+  margin-bottom: 1.5rem;
+}
+
+[item~="push-sides"] {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+[item~="push:left"] {
+  margin-left: 1rem;
+}
+
+[item~="inside-form"][item~="push-sides"] {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+[item~="inside-form"][item~="no-bottom"] {
+  margin-bottom: 0;
+}
+
+[item~="inside-form"][item~="no-top"] {
+  margin-top: 0;
+}
+
+[item~="inside-form"][item~="border:solid"] {
+  border-bottom-style: solid;
+}
+
+[item~="no-edge"] {
+  padding: 0;
+}
+
+
+[item~="no-edge-left"] {
+  padding-left: 0;
+}
+
+[item~="no-edge-right"] {
+  padding-right: 0;
+}
+
+[item~="no-edge:left"] {
+  padding-left: 0;
+}
+
+[item~="no-edge:right"] {
+  padding-right: 0;
+}
+
+[item-title] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  // margin: 0 .5em;
+  color: @neutral-dim;
+  font-family: @condensed;
+  font-weight: 400;
+  cursor: default;
+
+  i.icon-left {
+    margin-right: .7rem;
+  }
+
+  i.icon-right {
+    margin-left: .7rem;
+  }
+}
+
+[item-title~="font:roboto"] {
+  font-family: @roboto;
+}
+
+[item-title~="clear-text"] {
+  color: white;
+}
+
+[item-title~="large"] {
+  font-size: 2.3em;
+}
+
+[item-title~="medium"] {
+  font-size: 1.6em;
+}
+
+
+[item-title~="small"] {
+  font-size: 1.4em;
+}
+
+[item-title~="x-small"] {
+  font-size: 1.4em;
+}
+
+[item-title~="uppercase"] {
+  text-transform: uppercase;
+}
+
+[item-title="center-text"] {
+  text-align: center;
+  justify-content: center;
+}
+
+[item-title~="fill-height"] {
+  height: 100%;
+}
+
+[bar] {
+  user-select: none;
+  cursor: default;
+  font-size: 1rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.46);
+}
+
+[bar~="in-webview-ios"] {
+  box-sizing: content-box;
+  padding-top: 20px;
+}
+
+[bar~="small"] {
+  height: 3.4rem;
+}
+
+[bar~="x-small"] {
+  height: 2.7rem;
+}
+
+
+[bar~="large"] {
+  height: 6.4rem;
+}
+
+[bar~="auto"] {
+  height: auto;
+}
+
+[bar~="space-between"] {
+  justify-content: space-between;
+}
+
+[bar~="center"] {
+  justify-content: center;
+}
+
+
+[bar~="no-shadow"] {
+  box-shadow: none;
+}
+
+[bar~="push-bottom"] {
+  margin-bottom: .5rem;
+}
+
+[bar~="border-b-large"] {
+  border-bottom: 3px solid @neutral;
+}
+
+
+[dropdown] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+
+  & > [btn] {
+    position: absolute;
+    z-index: 10;
+
+    i {
+      transition: transform .3s;
+    }
+  }
+
+
+  [dropdown-list] {
+    position: absolute;
+    top: 4.4rem;
+    width: 100%;
+
+    overflow: visible;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    // padding-bottom: 1.25em;
+    pointer-events: none;
+
+    [item], [btn] {
+      opacity: 0;
+      transform: translate3d(0,-25px,0);
+      transition: opacity 0.15s, transform 0.15s;
+      margin-bottom: 0;
+      border-bottom: 1px solid @backdrop;
+
+      &:first-child {
+        // border-top: 1px solid @backdrop;
+      }
+    }
+
+    [btn] {
+
+      i {
+        opacity: 0;
+      }
+    }
+
+    [btn~="is-marked"] {
+
+      i {
+        opacity: .7;
+      }
+    }
+  }
+
+  [dropdown-list]::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: scale3d(1,0,1);
+    background: @item;
+    transform-origin: 50% 0%;
+    transition: transform 0.3s;
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.46);
+  }
+
+  [btn~="block"] {
+    height: 4.4rem;
+  }
+}
+
+[dropdown~="small"] {
+  [btn~="block"] {
+    height: 3.4rem;
+  }
+
+  [dropdown-list] {
+    top: 3.4rem;
+  }
+}
+
+[dropdown~="lvl-2"] {
+  z-index: 18;
+}
+
+[dropdown~="is-visible"] {
+
+  & > [btn] {
+
+    i {
+      transition: transform .3s;
+      transform: rotate(-180deg);
+    }
+
+  }
+
+  // [btn~="icon-left"] {
+
+
+  //   i {
+  //     padding-right: 0;
+  //     padding-left: .3em;
+  //   }
+  // }
+
+  // [btn~="icon-right"] {
+
+  //   i {
+  //     padding-left: 0;
+  //     padding-right: .3em;
+  //   }
+  // }
+
+  [dropdown-list]::before {
+    transform: scale3d(1,1,1);
+    transition: none;
+    animation: expand 0.6s ease-out;
+  }
+
+  [dropdown-list] {
+    pointer-events: auto;
+
+    [item], [btn] {
+      transform: translate3d(0,0,0);
+      opacity: 1;
+      transition: none;
+      animation: bounce 0.6s ease-out;
+      cursor: pointer;
+    }
+
+    [item-title] {
+      cursor: pointer;
+    }
+  }
+}
+
+
+//
+//      ripple
+//
+
+
+
+.fab{
+  border-radius: 50%;
+  margin:0;
+  padding: 20px;
+}
+
+.material{
+  position:relative;
+  color:white;
+  margin: 20px auto;
+  height:400px;
+  width:500px;
+  background:#f45673;
+
+}
+
+.ripple{
+  overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+
+
+  animation: ripple-animation 2s;
+}
+
+
+@keyframes ripple-animation {
+    from {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    to {
+      transform: scale(100);
+      opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+.ink {
+  display: block; position: absolute;
+  background: hsl(180, 40%, 80%);
+  border-radius: 100%;
+  transform: scale(0);
+}
+/*animation effect*/
+.ink.animate {animation: ripple 0.65s linear;}
+@keyframes ripple {
+  /*scale the element to 250% to safely cover the entire link and fade it out*/
+  100% {opacity: 0; transform: scale(2.5);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
