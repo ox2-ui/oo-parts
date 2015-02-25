@@ -13,15 +13,16 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0.2.1');
   // 3rd party
   api.use([
-    'lauricio:less-autoprefixer@1.0.7'
+    'lauricio:less-autoprefixer@1.0.15'
     ]);
   api.addFiles('lib/oo-color-variables.import.less', C);
   api.addFiles('lib/oo-header.less', C);
   api.addFiles('lib/oo-item.less', C);
+  api.addFiles('lib/oo-position.less', C);
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('ox2:buttons');
-  api.addFiles('tests/00-buttons-tests.js');
+  api.addFiles('tests/oo-parts-tests.js');
 });
