@@ -15,8 +15,6 @@ Package.onUse(function(api) {
   api.use([
     'lauricio:less-autoprefixer@2.5.0_3'
     ]);
-  api.addFiles('lib/oo-color-variables.import.less', C);
-  api.addFiles('lib/oo-font-variables.import.less', C);
   api.addFiles('lib/oo-header.less', C);
   api.addFiles('lib/oo-item.less', C);
   api.addFiles('lib/oo-position.less', C);
