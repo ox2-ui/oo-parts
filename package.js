@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:parts',
   summary: 'TESTING_DO_NOT_USE Variuos component style parts',
-  version: '1.3.0',
+  version: '1.4.0',
   git: ' /* Fill me in! */ '
 });
 
@@ -13,7 +13,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   // 3rd party
   api.use([
-    'lauricio:less-autoprefixer@2.5.0_3'
+    'less'
     ]);
   api.addFiles('lib/oo-header.less', C);
   api.addFiles('lib/oo-item.less', C);
